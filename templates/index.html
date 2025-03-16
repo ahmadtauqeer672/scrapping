@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block head %}
+<title>Search Page</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+{% endblock %}
+
+{% block body %}
+<div class="content">
+    <h1 style="text-align: center">Search</h1>
+    <div class="form">
+        <form action="/review" method="POST" onsubmit="showLoading()">
+            <input type="text" name="content" id="content" placeholder="Enter product name" required>
+            <input type="submit" value="Search">
+        </form>
+    </div>
+
+    <!-- Loading Animation -->
+    <div id="loading" class="loading-spinner" style="display: none;">
+        <div class="spinner"></div>
+        <p>Fetching reviews, please wait...</p>
+    </div>
+</div>
+
+<!-- Footer with Developer Name -->
+<footer style="text-align: center; margin-top: 20px; font-size: 14px; color: #555;">
+    Developed by <strong>Ahmed Tauqeer</strong>
+</footer>
+
+<!-- JavaScript to Show Loading Spinner -->
+<script>
+    function showLoading() {
+        document.getElementById("loading").style.display = "block";
+    }
+</script>
+{% endblock %}
