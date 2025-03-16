@@ -4,7 +4,8 @@ import requests
 from bs4 import BeautifulSoup as bs
 from urllib.request import urlopen as uReq
 
-app = Flask(__name__)
+application= Flask(__name__)
+app=application
 
 @app.route("/", methods=['GET'])
 def homepage():
